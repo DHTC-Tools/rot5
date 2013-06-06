@@ -5,6 +5,7 @@ if [ $# -ne '1' ]; then
   exit 1
 fi
 
+SCALER=1
 ROOT_FILES=$1
 SUBMIT_FILE_NAME=`whoami`.$ROOT_FILES.$RANDOM.submit
 
@@ -35,7 +36,7 @@ function queue()
   while read line  
   do 
     echo "arguments = $line" >> $SUBMIT_FILE_NAME
-    echo "queue" >> $SUBMIT_FILE_NAME
+    echo "queue $SCALER" >> $SUBMIT_FILE_NAME
   done < $ROOT_FILES
 }
 
