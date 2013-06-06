@@ -6,7 +6,7 @@ Output  = log/out.$(Cluster).$(Process)
 Log     = log/log.$(Cluster)
 
 transfer_executable = True
-transfer_input_files=read.C,Makefile,setup.sh,$(ProxyFile)
+transfer_input_files=read.C,readCopy.C,Makefile,setup.sh,$(ProxyFile)
 when_to_transfer_output = ON_EXIT
 
 # Uncomment to steer to OSG resources
