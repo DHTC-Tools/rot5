@@ -1,0 +1,18 @@
+executable     = parrot-wrapper.sh 
+universe       = vanilla
+
+Error   = log/err.$(Cluster).$(Process)
+Output  = log/out.$(Cluster).$(Process)
+Log     = log/log.$(Cluster)
+
+transfer_executable = True
+transfer_input_files=read.C,Makefile,setup.sh,$(ProxyFile)
+when_to_transfer_output = ON_EXIT
+
+# Uncomment to steer to OSG resources
+#requirements =isUndefined(GLIDECLIENT_Name) == FALSE
+
+# Change to your proxy
+ProxyFile = x509up_u20069
+
+queue 1 
