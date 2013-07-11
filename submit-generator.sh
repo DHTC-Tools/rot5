@@ -4,8 +4,8 @@
 ## These can be changed. scale factor is just the number after "queue" in the
 ## submit file
 
-PROXY=x509up_u20069
-SCALE_FACTOR=5
+PROXY=x509up_u20069 # Add your proxy
+SCALE_FACTOR=1 # Change as desired
 
 ###############################################################################
 if [ $# -ne '1' ]; then
@@ -19,7 +19,7 @@ SUBMIT_FILE_NAME=`whoami`.$ROOT_FILES.$RANDOM.submit
 
 function init() {
 echo "
-executable     = parrot-wrapper.sh
+executable     = vanilla-wrapper.sh
 universe       = vanilla
 
 Error   = log/err.\$(Cluster).\$(Process)
@@ -46,8 +46,5 @@ function queue()
     echo "queue $SCALE_FACTOR" >> $SUBMIT_FILE_NAME
   done < $ROOT_FILES
 }
-
-init
-queue 
 
 echo "Generated submit file $SUBMIT_FILE_NAME"
