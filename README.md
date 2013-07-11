@@ -5,3 +5,6 @@ To test the code locally, without parrot, against the first file of the MWT2 lis
 
 To do the same with parrot:
 ./parrot-wrapper.sh $(head -n1 MWT2.list) 
+
+Bugs:
+	Code does not work on SL6 worker nodes.
