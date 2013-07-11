@@ -47,4 +47,7 @@ function queue()
   done < $ROOT_FILES
 }
 
+init
+queue
+
 echo "Generated submit file $SUBMIT_FILE_NAME"
